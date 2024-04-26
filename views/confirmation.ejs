@@ -1,0 +1,40 @@
+<!-- views/confirmation.ejs -->
+
+<!-- <%- include("partials/header"); -%> -->
+<header class="masthead" style="background-image: url('/assets/img/maa_charan.webp')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="mb-4">
+    <div id="englishContent">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <h1 class="mb-3">Registration Successful!</h1>
+                    <p class="fs-4 fw-bold">Your registration number is:<span class="text-success fw-bold"> <%= urn %></span> </p>
+                    <p class="fs-5 text-warning mb-0 fw-bold">Please note down this Registration Number or take a screenshot of this page! 📸</p>
+                    <p class="fs-5 text-warning mt-2 fw-bold hindi">कृपया इस रजिस्ट्रेशन नंबर को नोट करें या इस पृष्ठ का स्क्रीनशॉट लें! 📸</p>
+                    <p class="fs-5 mb-0 fw-bold ">If you would like to add new Registration use this Registration button: <a class="hindi btn-success text-white btn rounded-3 nav-link px-lg-3 py-3 py-lg-4" href="registration">Registration</a></p>
+                    <p class="fs-5 mt-1 fw-bold hindi">यदि आप नए पंजीकरण जोड़ना चाहते हैं तो कृपया "Registration" बटन का उपयोग करें।</p>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <!--for deployment link need to give here  exit from conffirmation page un comment this command-->
+                    <a href="https://shriadigurupuja2024.in/" class="btn btn-success custom-btn  rounded mx-auto d-block">Click Here To Exit</a>
+
+                    <!--for local setup exit from conffirmation page un comment this command-->
+                    <!--<a href="https://shriadigurupuja2024.cyclic.app/" class="btn btn-success custom-btn  rounded mx-auto d-block">Click here to exit</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+</html>
