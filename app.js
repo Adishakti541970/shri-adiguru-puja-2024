@@ -162,9 +162,14 @@ import('emailjs').then((emailjsModule) => {
 
   app.post("/registration", async function (req, res) {
     let urn = generateurn();
-    const numAdults = parseInt(req.body.numAdults, 10);
-    const numYuvas = parseInt(req.body.numYuvas, 10);
-    const numBals = parseInt(req.body.numBals, 10);
+    let numAdults = parseInt(req.body.numAdults, 10);
+    //console.log(numAdults);
+    let numYuvas = parseInt(req.body.numYuvas, 10);
+    let numBals = parseInt(req.body.numBals, 10);
+    numAdults = isNaN (numAdults) ? 0: numAdults;
+    //console.log(numAdults);
+    numYuvas = isNaN (numYuvas) ? 0: numYuvas;
+    numBals = isNaN (numBals) ? 0: numBals;
 
     const yuvaDetails = [];
     const adultDetails = [];
@@ -178,8 +183,8 @@ import('emailjs').then((emailjsModule) => {
       const yuvaGender = req.body[`yuvaGender${i}`];
       const yuvaAge = req.body[`yuvaAge${i}`];
       const yuvaStaying = req.body[`yuvaStaying${i}`];
-      syDetails.push({ name: yuvaName, address: yuvaAddress, gender: yuvaGender, mobile: req.body.payerMobile, category: "Y", urn:urn, yuvaAge:yuvaAge, yuvaStaying:yuvaStaying });
-      yuvaDetails.push({ name: yuvaName, address: yuvaAddress, gender: yuvaGender, yuvaAge:yuvaAge, yuvaStaying:yuvaStaying });
+      syDetails.push({ name: yuvaName, address: yuvaAddress, gender: yuvaGender, mobile: req.body.payerMobile, category: "Y", urn:urn, age:yuvaAge, staying:yuvaStaying });
+      yuvaDetails.push({ name: yuvaName, address: yuvaAddress, gender: yuvaGender, age:yuvaAge, staying:yuvaStaying });
     }
 
     // Loop through and save adult details
@@ -190,8 +195,8 @@ import('emailjs').then((emailjsModule) => {
       const adultAge = req.body[`adultAge${i}`];
       const adultStaying = req.body[`adultStaying${i}`];
 
-      syDetails.push({ name: adultName, address: adultAddress, gender: adultGender, mobile: req.body.payerMobile, category: "A", urn:urn, adultAge:adultAge, adultStaying:adultStaying });
-      adultDetails.push({ name: adultName, address: adultAddress, gender: adultGender, adultAge:adultAge, adultStaying:adultStaying });
+      syDetails.push({ name: adultName, address: adultAddress, gender: adultGender, mobile: req.body.payerMobile, category: "A", urn:urn, age:adultAge, staying:adultStaying });
+      adultDetails.push({ name: adultName, address: adultAddress, gender: adultGender, age:adultAge, staying:adultStaying });
     }
     
     // Loop through and save bal details
@@ -202,8 +207,8 @@ import('emailjs').then((emailjsModule) => {
       const balAge = req.body[`balAge${i}`];
       const balStaying = req.body[`balStaying${i}`];
       
-      syDetails.push({ name: balName, address: balAddress, gender: balGender, mobile: req.body.payerMobile, category: "C", urn:urn,balAge:balAge, balStaying:balStaying });
-      balDetails.push({ name: balName, address: balAddress, gender: balGender, balAge:balAge, balStaying:balStaying  });
+      syDetails.push({ name: balName, address: balAddress, gender: balGender, mobile: req.body.payerMobile, category: "C", urn:urn,age:balAge, staying:balStaying });
+      balDetails.push({ name: balName, address: balAddress, gender: balGender, age:balAge, staying:balStaying  });
     }
     
     let payerDetails = {
