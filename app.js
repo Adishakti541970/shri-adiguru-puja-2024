@@ -86,6 +86,11 @@ import('emailjs').then((emailjsModule) => {
               Jai Shri Mataji 🙏🏻💝<br><br>
               Thank you for completing the registration process. We are delighted to inform you that your registration for the <strong>Shri AdiGuru Puja</strong> has been successful.😄<br><br>
               Your Unique Registration Number (URN) is: <strong>${urn}</strong>.<br><br>
+              For shri adiguru puja inforamtion, please visit : https://shriadigurupuja2024.in/ <br>
+              For any queries, feel free to reach out to us :<br>
+              <strong> For Registration:</strong> Amit Dixit - 8884300770<br>
+              <strong> For Transport:</strong> Rajesh Vaddi - 8553304124<br>
+              <Strong> For Accomodation:</strong> Gaurav Juyal - 9999990923<br><br>
               We look forward to celebrating this auspicious occasion with you.<br><br>
               Best Regards,<br>
               <strong>The Registration Team 💝</strong>
