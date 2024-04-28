@@ -76,7 +76,7 @@ import('emailjs').then((emailjsModule) => {
   async function sendEmail(urn, userEmail,userName) {
     try {
       const message = {
-        from: 'Registration Team <bangaloreadigurupuja@gmail.com>',
+        from: 'Shri AdiGuru Puja <bangaloreadigurupuja@gmail.com>',
         to: `${userName} <${userEmail}>`,
         cc: '<sykarpujaseminar@gmail.com>',
         subject: 'Registration Confirmation - Shri AdiGuru Puja Bengaluru 2024',
