@@ -127,7 +127,8 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="payerMobile">Mobile No.:<span class="text-danger fw-bold">*</span></label>
-                                <input type="text" class="form-control" name="payerMobile" id="payerMobile" required>
+                                <input type="text" class="form-control" name="payerMobile" id="payerMobile"
+                                    pattern="\d{10}" maxlength="10" required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="payerDistrict">District:<span class="text-danger fw-bold">*</span></label>
@@ -178,6 +179,40 @@
                             <h3 class="text-center">1️⃣ QR Code</h3>
                             <img class="col-md-6 rounded mx-auto d-block" src="/assets/img/qr.png">
                             <hr>
+                            <style>
+                                textarea {
+                                  width: calc(100% - 40px);
+                                  height: 50px;
+                                  margin-bottom: 10px;
+                                  padding: 10px;
+                                  border: 3px solid #a67bda;
+                                  border-radius: 4px;
+                                  resize: none;
+                                }
+                            
+                                button {
+                                  padding: 10px 20px;
+                                  background-color: #1f6221;
+                                  color: white;
+                                  border: none;
+                                  border-radius: 4px;
+                                  cursor: pointer;
+                                }
+                            
+                                button:hover {
+                                  background-color: #45a049;
+                                }
+                              </style>
+                            <textarea id="textToCopy" rows="1" cols="25">mab.037244001020210@axisbank</textarea>
+                            <button onclick="copyText()">Copy UPI ID</button>
+                            <script>
+                                function copyText() {
+                                  var textToCopy = document.getElementById('textToCopy');
+                                  textToCopy.select();
+                                  document.execCommand('copy');
+                                  alert('Text copied!');
+                                }
+                            </script>
                             <h3 class="text-center mt-3 mb-0">2️⃣ Bank Details</h3>
                             <p class="fw-bold mb-0">A/C Name: H H Shri Mataji Nirmala Devi
                                 Sahaja Yoga Trust<br>
@@ -274,7 +309,7 @@
                         </div>
                         <div class="form-group col-md-2.4">
                             <label for="${category}Age${i}">Age:<span class="text-danger fw-bold">*</span></label>
-                            <input type="text" class="form-control" name="${category}Age${i}" id="${category}Age${i}" required>
+                            <input type="number" class="form-control" name="${category}Age${i}" id="${category}Age${i}" required>
                         </div>
                         <div class="form-group col-md-2.4">
                             <label for="${category}Staying${i}">Staying At Venue:<span class="text-danger fw-bold">*</span></label>
